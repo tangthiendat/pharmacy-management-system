@@ -4,10 +4,12 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class App extends Application {
     private double x = 0;
@@ -27,7 +29,13 @@ public class App extends Application {
             stage.setX(event.getScreenX() - x);
             stage.setY(event.getScreenY() - y);
         });
-
+        //Add icons to the app
+        Image icon16 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon16.png")));
+        Image icon32 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon32.png")));
+        Image icon64 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon64.png")));
+        Image icon128 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon128.png")));
+        stage.getIcons().addAll(icon16, icon32, icon64, icon128);
+        stage.setTitle("Pharmacy Management System");
         stage.setScene(scene);
         stage.show();
     }

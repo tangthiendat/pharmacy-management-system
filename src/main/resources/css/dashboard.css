@@ -133,3 +133,8 @@
 .btn-delete:hover {
     -fx-background-color: #ff033e;
 }
+
+.chart-line-symbol {
+    -fx-scale-x: 1.25;
+    -fx-scale-y: 1.25;
+}
