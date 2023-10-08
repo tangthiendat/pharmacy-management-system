@@ -34,8 +34,9 @@ public class App extends Application {
         Image icon32 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon32.png")));
         Image icon64 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon64.png")));
         Image icon128 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon128.png")));
-        stage.getIcons().addAll(icon16, icon32, icon64, icon128);
-        stage.setTitle("Pharmacy Management System");
+        Image icon256 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon256.png")));
+        stage.getIcons().addAll(icon16, icon32, icon64, icon128, icon256);
+        stage.setTitle("DTA Pharmacy Management System");
         stage.setScene(scene);
         stage.show();
     }

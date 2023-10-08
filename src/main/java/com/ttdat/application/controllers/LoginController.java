@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -19,6 +20,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -77,7 +79,13 @@ public class LoginController implements Initializable {
                         stage.setX(event.getScreenX() - x);
                         stage.setY(event.getScreenY() - y);
                     });
-
+                    Image icon16 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon16.png")));
+                    Image icon32 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon32.png")));
+                    Image icon64 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon64.png")));
+                    Image icon128 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon128.png")));
+                    Image icon256 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/img/icon256.png")));
+                    stage.getIcons().addAll(icon16, icon32, icon64, icon128, icon256);
+                    stage.setTitle("DTA Pharmacy Management System");
                     stage.setScene(scene);
                     stage.show();
                 } else {
