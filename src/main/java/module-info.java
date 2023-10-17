@@ -7,6 +7,6 @@ module pharmacy {
     requires mysql.connector.j;
 
     opens com.ttdat.application.controllers to javafx.fxml;
-    opens com.ttdat.application.model to javafx.base;
+//    opens com.ttdat.application.model to javafx.base;
     exports com.ttdat.application;
 }
