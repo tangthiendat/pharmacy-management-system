@@ -16,6 +16,7 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
@@ -588,6 +589,13 @@ public class DashboardController implements Initializable {
 
     public void initChart() {
         loadNewChartDataFromDB();
+        //Show all days in x-axis
+        CategoryAxis xAxis = (CategoryAxis) dashboard_chart.getXAxis();
+        ObservableList<String> categories = FXCollections.observableArrayList();
+        for (LocalDate date : currentWeekDayList) {
+            categories.add(String.valueOf(date));
+        }
+        xAxis.setCategories(categories);
         //Show data until the current day
         for (int i = 0; i <= currentWeekDayList.indexOf(LocalDate.now()); i++) {
             if (!currentWeekIncomeReport.containsKey(currentWeekDayList.get(i))) {
